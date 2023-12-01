@@ -7,10 +7,7 @@ def calibration_value(file):
         for line in input:
             nums = re.findall(r'\d+', line)
             if nums:
-                if len(nums) > 1:
-                    sum += int(nums[0][0] + nums[-1][-1])
-                else:
-                    sum += int(nums[0][0] + nums[0][-1])
+                sum += int(nums[0][0] + nums[-1][-1])
     print(sum)
 
 calibration_value(sys.argv[1])
