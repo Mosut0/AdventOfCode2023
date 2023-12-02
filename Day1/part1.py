@@ -8,6 +8,6 @@ def calibration_value(file):
             nums = re.findall(r'\d+', line)
             if nums:
                 sum += int(nums[0][0] + nums[-1][-1])
-    print(sum)
+    return sum
 
-calibration_value(sys.argv[1])
+print(calibration_value(sys.argv[1]))
