@@ -22,4 +22,18 @@ def points(file):
     
     return sum
 
+# Alternative, cleaner + better solution
+def solution(lines: list[str]) -> int:
+    total = 0
+
+    for line in lines:
+        line = line[line.find(':') + 2:].split(' | ')
+        winning_nums = {n for n in line[0].split()}
+        nums = {n for n in line[1].split()}
+
+        diff = len(winning_nums) - len(winning_nums - nums)
+        if diff > 0:
+            total += 2 ** (diff - 1)
+    return total
+
 print(points(sys.argv[1]))
