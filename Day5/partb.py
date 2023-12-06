@@ -1,6 +1,7 @@
 import re
+import sys
 
-with open("A:\Projects\AdventOfCode2023\Day5\input.txt") as fin:
+with open(sys.argv[1]) as fin:
     lines = fin.read().strip().split("\n")
 
 raw_seeds = list(map(int, lines[0].split(" ")[1:]))
